@@ -6,6 +6,7 @@
     "onePageListNum":18,
     "commentLabelColor":"#006b75",
     "yearColorList":["#bc4c00", "#0969da", "#1f883d", "#A333D0"],
+    "needComment":1
     "i18n":"CN",
     "UTC":8,
     "bottomText":"❤️ 转载文章请注明出处，谢谢！❤️",
