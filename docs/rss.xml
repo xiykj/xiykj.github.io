@@ -1,5 +1,23 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>凡是過往；皆為序章</title><link>https://xiykj.github.io</link><description>不积跬步无以至千里；不积小流无以成江海。</description><copyright>凡是過往；皆為序章</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/164145440?s=48&amp;v=4</url><title>avatar</title><link>https://xiykj.github.io</link></image><lastBuildDate>Wed, 14 Aug 2024 14:15:26 +0000</lastBuildDate><managingEditor>凡是過往；皆為序章</managingEditor><ttl>60</ttl><webMaster>凡是過往；皆為序章</webMaster><item><title>Windows查看端口被占用</title><link>https://xiykj.github.io/post/Windows-cha-kan-duan-kou-bei-zhan-yong.html</link><description>## Windows下查看哪个端口被哪些进程占用，有时候开启软件服务的时候提示端口占用。</description><guid isPermaLink="true">https://xiykj.github.io/post/Windows-cha-kan-duan-kou-bei-zhan-yong.html</guid><pubDate>Wed, 14 Aug 2024 13:41:39 +0000</pubDate></item><item><title>自学C语言_第一章</title><link>https://xiykj.github.io/post/zi-xue-C-yu-yan-_-di-yi-zhang.html</link><description>## 第一章：C语言的概述&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>凡是過往；皆為序章</title><link>https://xiykj.github.io</link><description>不积跬步无以至千里；不积小流无以成江海。</description><copyright>凡是過往；皆為序章</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/164145440?s=48&amp;v=4</url><title>avatar</title><link>https://xiykj.github.io</link></image><lastBuildDate>Wed, 14 Aug 2024 14:21:41 +0000</lastBuildDate><managingEditor>凡是過往；皆為序章</managingEditor><ttl>60</ttl><webMaster>凡是過往；皆為序章</webMaster><item><title>批处理For循环一键Update补丁程序</title><link>https://xiykj.github.io/post/pi-chu-li-For-xun-huan-yi-jian-Update-bu-ding-cheng-xu.html</link><description>Windows刚安装完系统后、有些软件必须要先update patch后才能进行软件安装，如果补丁一个个用手操作的话简直要feng了，现在通过Windows命令for循环来批量安装Windows补丁程序，又快又方便，释放自己的双手简直爽飞了，以下是Windows中for命令批量安装补丁程序代码：&#13;
+```&#13;
+@Echo Off&#13;
+color 0a&#13;
+Title Install Windows Update pack&#13;
+Echo 正在安装Windows系统补丁，请稍等......&#13;
+for %%i in (*.exe) do %%i /passive /norestart /nobackup&#13;
+For %%F In (*.msu) Do Call :Update %%F&#13;
+Shutdown.exe -r -t 30&#13;
+Exit&#13;
+:Update&#13;
+Echo 现在Update补丁程序:      %1    安装完成&#13;
+Start /Wait %1 /quiet /norestart&#13;
+GoTo :EOF&#13;
+Exit&#13;
+```&#13;
+将以上代码复制粘贴在记事本中，然后另存文件名称为：Windows_patch.bat，文件类型选择所有（注：.bat文件是Windows中的批处理程序）/不会操作的朋友在这里附上下载地址：https://pan.baidu.com/s/1ZH-62opziEeYwn5jskNblw 　提取码：w32c&#13;
+&#13;
+将下载的所有补丁程序和 Windows_patch.bat 文件放在同一个文件夹中，然后双击“Windows_patch.bat”文件运行程序。</description><guid isPermaLink="true">https://xiykj.github.io/post/pi-chu-li-For-xun-huan-yi-jian-Update-bu-ding-cheng-xu.html</guid><pubDate>Wed, 14 Aug 2024 14:21:21 +0000</pubDate></item><item><title>Windows查看端口被占用</title><link>https://xiykj.github.io/post/Windows-cha-kan-duan-kou-bei-zhan-yong.html</link><description>## Windows下查看哪个端口被哪些进程占用，有时候开启软件服务的时候提示端口占用。</description><guid isPermaLink="true">https://xiykj.github.io/post/Windows-cha-kan-duan-kou-bei-zhan-yong.html</guid><pubDate>Wed, 14 Aug 2024 13:41:39 +0000</pubDate></item><item><title>自学C语言_第一章</title><link>https://xiykj.github.io/post/zi-xue-C-yu-yan-_-di-yi-zhang.html</link><description>## 第一章：C语言的概述&#13;
 &#13;
 1.1  程序语言的叙述：程序是指可以被计算机连续执行的指令语句的集合。</description><guid isPermaLink="true">https://xiykj.github.io/post/zi-xue-C-yu-yan-_-di-yi-zhang.html</guid><pubDate>Wed, 14 Aug 2024 13:36:42 +0000</pubDate></item><item><title>小米MiFlash刷机报错售后方法参考</title><link>https://xiykj.github.io/post/xiao-mi-MiFlash-shua-ji-bao-cuo-shou-hou-fang-fa-can-kao.html</link><description>## [小米MiFlash刷机报错售后方法参考]&#13;
 ![1](https://img2020.cnblogs.com/blog/2034475/202005/2034475-20200514153333225-1535889002.png)&#13;
