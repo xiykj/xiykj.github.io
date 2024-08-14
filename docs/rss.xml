@@ -1,5 +1,23 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>凡是過往；皆為序章</title><link>https://xiykj.github.io</link><description>不积跬步无以至千里；不积小流无以成江海。</description><copyright>凡是過往；皆為序章</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/164145440?s=48&amp;v=4</url><title>avatar</title><link>https://xiykj.github.io</link></image><lastBuildDate>Wed, 14 Aug 2024 14:21:41 +0000</lastBuildDate><managingEditor>凡是過往；皆為序章</managingEditor><ttl>60</ttl><webMaster>凡是過往；皆為序章</webMaster><item><title>批处理For循环一键Update补丁程序</title><link>https://xiykj.github.io/post/pi-chu-li-For-xun-huan-yi-jian-Update-bu-ding-cheng-xu.html</link><description>Windows刚安装完系统后、有些软件必须要先update patch后才能进行软件安装，如果补丁一个个用手操作的话简直要feng了，现在通过Windows命令for循环来批量安装Windows补丁程序，又快又方便，释放自己的双手简直爽飞了，以下是Windows中for命令批量安装补丁程序代码：&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>凡是過往；皆為序章</title><link>https://xiykj.github.io</link><description>不积跬步无以至千里；不积小流无以成江海。</description><copyright>凡是過往；皆為序章</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/164145440?s=48&amp;v=4</url><title>avatar</title><link>https://xiykj.github.io</link></image><lastBuildDate>Wed, 14 Aug 2024 14:25:58 +0000</lastBuildDate><managingEditor>凡是過往；皆為序章</managingEditor><ttl>60</ttl><webMaster>凡是過往；皆為序章</webMaster><item><title>微信多开程序</title><link>https://xiykj.github.io/post/wei-xin-duo-kai-cheng-xu.html</link><description>有时候想在电脑上登入多个微信帐号，但是怎奈鹅厂开启pc端微信限制，下面就用Windows批处理命令来进行微信多开，具体代码命令如下：&#13;
+```&#13;
+@echo off&#13;
+:list&#13;
+color 0a&#13;
+title '微信N开软件'&#13;
+mode con cols=103 lines=30 &amp;color 0a&#13;
+set /p N=请输入需要开多少个微信：&#13;
+for /l %%a in (1,1,%N%) do start E:\1-绿化软件_windows\影音娱乐\WeChat_v2.6.4.38\WeChat\WeChat.exe&#13;
+@echo ...&#13;
+ping /n 5 127.1 &gt;nul&#13;
+goto list&#13;
+```&#13;
+将上面代码复制粘贴在记事本中，然后另存为“微信N开程序”，文件类型选择“所有类型”，双击打开刚保存的程序文件，如下图所示：&#13;
+&#13;
+　　不会操作的直接直接链接下载：链接：https://pan.baidu.com/s/1SnkbRKFVQSxuTWohZDvnpQ 　　　　提取码：touo&#13;
+![1](https://img2020.cnblogs.com/blog/2034475/202006/2034475-20200604093848852-16482228.png)&#13;
+&#13;
+输入你想要开启的微信数量，回车后就能开启多个微信了。</description><guid isPermaLink="true">https://xiykj.github.io/post/wei-xin-duo-kai-cheng-xu.html</guid><pubDate>Wed, 14 Aug 2024 14:25:34 +0000</pubDate></item><item><title>批处理For循环一键Update补丁程序</title><link>https://xiykj.github.io/post/pi-chu-li-For-xun-huan-yi-jian-Update-bu-ding-cheng-xu.html</link><description>Windows刚安装完系统后、有些软件必须要先update patch后才能进行软件安装，如果补丁一个个用手操作的话简直要feng了，现在通过Windows命令for循环来批量安装Windows补丁程序，又快又方便，释放自己的双手简直爽飞了，以下是Windows中for命令批量安装补丁程序代码：&#13;
 ```&#13;
 @Echo Off&#13;
 color 0a&#13;
