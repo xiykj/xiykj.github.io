@@ -1,5 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>凡是過往；皆為序章</title><link>https://xiykj.github.io</link><description>不积跬步无以至千里；不积小流无以成江海。</description><copyright>凡是過往；皆為序章</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/164145440?s=48&amp;v=4</url><title>avatar</title><link>https://xiykj.github.io</link></image><lastBuildDate>Thu, 15 Aug 2024 02:48:16 +0000</lastBuildDate><managingEditor>凡是過往；皆為序章</managingEditor><ttl>60</ttl><webMaster>凡是過往；皆為序章</webMaster><item><title>树梅派安装音乐播放器qmmp</title><link>https://xiykj.github.io/post/shu-mei-pai-an-zhuang-yin-le-bo-fang-qi-qmmp.html</link><description>## 最近想把放在抽屉的树梅派拿来使用练手，在不用的话板子都要坏了，想在树梅派上听歌，试用了网易云音乐/mplayer/qmmp播放器&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>凡是過往；皆為序章</title><link>https://xiykj.github.io</link><description>不积跬步无以至千里；不积小流无以成江海。</description><copyright>凡是過往；皆為序章</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/164145440?s=48&amp;v=4</url><title>avatar</title><link>https://xiykj.github.io</link></image><lastBuildDate>Thu, 15 Aug 2024 02:51:04 +0000</lastBuildDate><managingEditor>凡是過往；皆為序章</managingEditor><ttl>60</ttl><webMaster>凡是過往；皆為序章</webMaster><item><title>树梅派3b安装输入法</title><link>https://xiykj.github.io/post/shu-mei-pai-3b-an-zhuang-shu-ru-fa.html</link><description>## 首先确保树莓派已经连网，之后进入桌面打开命令终端&#13;
+&#13;
+### 这里介绍三款输入法的安装教程，分别是Fcitx输入法、SCIM输入法、Ibus输入法&#13;
+&#13;
+　　1.      安装Fcitx输入法，google拼音输入法&#13;
+&#13;
+　　　　`sudo apt-getinstall fcitx fcitx-googlepinyin fcitx-module-cloudpinyin fcitx-sunpinyin`&#13;
+&#13;
+　　2.      安装SCIM输入法，支持多国语言的输入法，默认支持英语键盘、智能拼音、五笔字型、自然码、二笔等&#13;
+&#13;
+　　　　`sudo apt-get install scim-pinyin`&#13;
+![1](https://img2020.cnblogs.com/blog/2034475/202006/2034475-20200610144043793-1115492312.png)&#13;
+　　　　&#13;
+&#13;
+　　3.      安装Ibus输入法是一个基于Python开发的全新输入法框架，支持多种语言。</description><guid isPermaLink="true">https://xiykj.github.io/post/shu-mei-pai-3b-an-zhuang-shu-ru-fa.html</guid><pubDate>Thu, 15 Aug 2024 02:50:44 +0000</pubDate></item><item><title>树梅派安装音乐播放器qmmp</title><link>https://xiykj.github.io/post/shu-mei-pai-an-zhuang-yin-le-bo-fang-qi-qmmp.html</link><description>## 最近想把放在抽屉的树梅派拿来使用练手，在不用的话板子都要坏了，想在树梅派上听歌，试用了网易云音乐/mplayer/qmmp播放器&#13;
 &#13;
 ### 还是觉得qmmp比较好用，网易云音乐因播放不了本地音乐直接pass&#13;
 &#13;
