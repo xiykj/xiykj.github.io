@@ -1,5 +1,27 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>凡是過往；皆為序章</title><link>https://xiykj.github.io</link><description>不积跬步无以至千里；不积小流无以成江海。</description><copyright>凡是過往；皆為序章</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/164145440?s=48&amp;v=4</url><title>avatar</title><link>https://xiykj.github.io</link></image><lastBuildDate>Fri, 16 Aug 2024 02:42:21 +0000</lastBuildDate><managingEditor>凡是過往；皆為序章</managingEditor><ttl>60</ttl><webMaster>凡是過往；皆為序章</webMaster><item><title>树梅派搭建http文件服务器</title><link>https://xiykj.github.io/post/shu-mei-pai-da-jian-http-wen-jian-fu-wu-qi.html</link><description>　　这两天突然想在树梅派上写博客文章，因照片素材都是存在手机上的，每次插拔usb接口实在太麻烦了，想着能不能用无线传输文件呢？&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>凡是過往；皆為序章</title><link>https://xiykj.github.io</link><description>不积跬步无以至千里；不积小流无以成江海。</description><copyright>凡是過往；皆為序章</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/164145440?s=48&amp;v=4</url><title>avatar</title><link>https://xiykj.github.io</link></image><lastBuildDate>Fri, 16 Aug 2024 03:28:07 +0000</lastBuildDate><managingEditor>凡是過往；皆為序章</managingEditor><ttl>60</ttl><webMaster>凡是過往；皆為序章</webMaster><item><title>纪念我的MX2 # 20130728</title><link>https://xiykj.github.io/post/ji-nian-wo-de-MX2%20%23%2020130728.html</link><description>## JD买的，当时也是够奢侈的，2299买了我人生中最贵的电子产品，不过值得可幸的是MX2仍在服役中，偶尔还会拿出来听听music&#13;
+&lt;img src = 'https://img2020.cnblogs.com/blog/2034475/202006/2034475-20200611195213776-955439766.jpg' &gt;&#13;
+&#13;
+### MX2机身正面：&#13;
+&lt;img src = 'https://s3.bmp.ovh/imgs/2024/08/16/6adcb9bc5dbdc924.jpg' &gt;&#13;
+&lt;img src = 'https://s3.bmp.ovh/imgs/2024/08/16/c64b5e12156f159d.jpg'&gt;&#13;
+&lt;img src = 'https://s3.bmp.ovh/imgs/2024/08/16/4995f647ff169537.jpg' /&gt;&#13;
+&#13;
+### 机身背面，冰玉白的质感，手握着非常的舒服：&#13;
+&lt;img src = 'https://s3.bmp.ovh/imgs/2024/08/16/8ee7a361cffc6abc.jpg'&gt;&#13;
+&#13;
+### Flyme os桌面：&#13;
+&lt;img src = 'https://s3.bmp.ovh/imgs/2024/08/16/1ae814de645682b7.jpg'&gt;&#13;
+&lt;img src = 'https://s3.bmp.ovh/imgs/2024/08/16/bee2d3d0022e63f1.jpg'&gt;&#13;
+&#13;
+### MX2参数配置：&#13;
+&lt;img src = 'https://s3.bmp.ovh/imgs/2024/08/15/81bcb9f4d29534c1.jpg' /&gt;&#13;
+&#13;
+### 小圆点设计（魅族经典之作）：&#13;
+&lt;img src = 'https://s3.bmp.ovh/imgs/2024/08/16/935c2b2d6c2ce940.jpg' /&gt;&#13;
+&#13;
+### 历经曲折，售后维修屏幕（mx2跳屏通病，魅族承诺免费为煤油更换屏幕）&#13;
+&lt;img src = 'https://img2020.cnblogs.com/blog/2034475/202006/2034475-20200611200054790-1814179163.jpg' /&gt;。</description><guid isPermaLink="true">https://xiykj.github.io/post/ji-nian-wo-de-MX2%20%23%2020130728.html</guid><pubDate>Fri, 16 Aug 2024 03:21:31 +0000</pubDate></item><item><title>树梅派搭建http文件服务器</title><link>https://xiykj.github.io/post/shu-mei-pai-da-jian-http-wen-jian-fu-wu-qi.html</link><description>　　这两天突然想在树梅派上写博客文章，因照片素材都是存在手机上的，每次插拔usb接口实在太麻烦了，想着能不能用无线传输文件呢？&#13;
 &#13;
 　　之前在windows中用过CHFS搭建服务进行文件共享，感觉传输速率和使用都挺方便，也知道CHFS有Linux版本，而且这个软件是开源的，试想着看那就试试吧！访问CHFS官网 http://iscute.cn/chfs 进行软件下载，因为我这是树梅派，树梅派的架构是arm，这点可以在 终端输入 uname -a 查看自己的Linux版本号&#13;
 ![1](https://img2020.cnblogs.com/blog/2034475/202006/2034475-20200611105522161-1182684116.png)&#13;
