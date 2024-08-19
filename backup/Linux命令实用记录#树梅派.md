@@ -85,4 +85,4 @@ sudo apt-cache search XXX            搜索软件包名，XXX为软件包名
 - > 查看历史使用过的命令
 
 history            查看历史使用过的命令
-<br/>
+<!-- ##{"script":"<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script>"}## -->
