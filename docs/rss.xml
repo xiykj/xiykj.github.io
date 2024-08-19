@@ -1,5 +1,23 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>凡是過往；皆為序章</title><link>https://xiykj.github.io</link><description>不积跬步无以至千里；不积小流无以成江海。</description><copyright>凡是過往；皆為序章</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/164145440?s=48&amp;v=4</url><title>avatar</title><link>https://xiykj.github.io</link></image><lastBuildDate>Mon, 19 Aug 2024 03:14:49 +0000</lastBuildDate><managingEditor>凡是過往；皆為序章</managingEditor><ttl>60</ttl><webMaster>凡是過往；皆為序章</webMaster><item><title>Windows 10访问XP系统共享文件报”因为文件共享不安全，所以你不能连接到文件共享。。。”</title><link>https://xiykj.github.io/post/Windows%2010-fang-wen-XP-xi-tong-gong-xiang-wen-jian-bao-%E2%80%9D-yin-wei-wen-jian-gong-xiang-bu-an-quan-%EF%BC%8C-suo-yi-ni-bu-neng-lian-jie-dao-wen-jian-gong-xiang-%E3%80%82%E3%80%82%E3%80%82%E2%80%9D.html</link><description>　　今天单位同事说他在电脑上访问XP系统共享的打印机时，结果出现下面报错：因为文件共享不安全，所以你不能连接到文件共享，此共享需要过时的SMB1协议…&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>凡是過往；皆為序章</title><link>https://xiykj.github.io</link><description>不积跬步无以至千里；不积小流无以成江海。</description><copyright>凡是過往；皆為序章</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/164145440?s=48&amp;v=4</url><title>avatar</title><link>https://xiykj.github.io</link></image><lastBuildDate>Mon, 19 Aug 2024 03:16:57 +0000</lastBuildDate><managingEditor>凡是過往；皆為序章</managingEditor><ttl>60</ttl><webMaster>凡是過往；皆為序章</webMaster><item><title>Chrome浏览器播放视频只有声音没有画面</title><link>https://xiykj.github.io/post/Chrome-liu-lan-qi-bo-fang-shi-pin-zhi-you-sheng-yin-mei-you-hua-mian.html</link><description>　　今天打开谷歌浏览器播放视频发现只有声音却画面一直是黑的，我就奇怪了，我最近在电脑上也没设置什么啦！查了一圈资料才发现是chrome浏览器更新后把”硬件加速'给开启了&#13;
+&#13;
+## 解决方法：&#13;
+&#13;
+　　1. 打开谷歌浏览器，进入设置&#13;
+&lt;img src = 'https://img2020.cnblogs.com/blog/2034475/202012/2034475-20201208105424416-329483421.png'&gt;&#13;
+　　&#13;
+&#13;
+　　2. 找到高级设置/系统&#13;
+&lt;img src = 'https://img2020.cnblogs.com/blog/2034475/202012/2034475-20201208110018621-1609039194.png'&gt;&#13;
+　　&#13;
+&#13;
+　　3. 将“硬件加速模式”关闭&#13;
+&lt;img src = 'https://img2020.cnblogs.com/blog/2034475/202012/2034475-20201208110045945-2134500724.png'&gt;&#13;
+　　&#13;
+&#13;
+　　4. 重启浏览器后打开视频即可&#13;
+&#13;
+ 。</description><guid isPermaLink="true">https://xiykj.github.io/post/Chrome-liu-lan-qi-bo-fang-shi-pin-zhi-you-sheng-yin-mei-you-hua-mian.html</guid><pubDate>Mon, 19 Aug 2024 03:16:29 +0000</pubDate></item><item><title>Windows 10访问XP系统共享文件报”因为文件共享不安全，所以你不能连接到文件共享。。。”</title><link>https://xiykj.github.io/post/Windows%2010-fang-wen-XP-xi-tong-gong-xiang-wen-jian-bao-%E2%80%9D-yin-wei-wen-jian-gong-xiang-bu-an-quan-%EF%BC%8C-suo-yi-ni-bu-neng-lian-jie-dao-wen-jian-gong-xiang-%E3%80%82%E3%80%82%E3%80%82%E2%80%9D.html</link><description>　　今天单位同事说他在电脑上访问XP系统共享的打印机时，结果出现下面报错：因为文件共享不安全，所以你不能连接到文件共享，此共享需要过时的SMB1协议…&#13;
 &lt;img src = 'https://img2020.cnblogs.com/blog/2034475/202012/2034475-20201208105047672-1483129223.png'&gt;&#13;
 　　&#13;
 &#13;
