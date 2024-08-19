@@ -1,5 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>凡是過往；皆為序章</title><link>https://xiykj.github.io</link><description>不积跬步无以至千里；不积小流无以成江海。</description><copyright>凡是過往；皆為序章</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/164145440?s=48&amp;v=4</url><title>avatar</title><link>https://xiykj.github.io</link></image><lastBuildDate>Mon, 19 Aug 2024 03:03:00 +0000</lastBuildDate><managingEditor>凡是過往；皆為序章</managingEditor><ttl>60</ttl><webMaster>凡是過往；皆為序章</webMaster><item><title>树梅派安全关机#重启命令</title><link>https://xiykj.github.io/post/shu-mei-pai-an-quan-guan-ji-%23-zhong-qi-ming-ling.html</link><description>## 安全关机：&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>凡是過往；皆為序章</title><link>https://xiykj.github.io</link><description>不积跬步无以至千里；不积小流无以成江海。</description><copyright>凡是過往；皆為序章</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/164145440?s=48&amp;v=4</url><title>avatar</title><link>https://xiykj.github.io</link></image><lastBuildDate>Mon, 19 Aug 2024 03:08:40 +0000</lastBuildDate><managingEditor>凡是過往；皆為序章</managingEditor><ttl>60</ttl><webMaster>凡是過往；皆為序章</webMaster><item><title>Linux命令Top详解</title><link>https://xiykj.github.io/post/Linux-ming-ling-Top-xiang-jie.html</link><description>## Top命令：&#13;
+&#13;
+　　Top相当于Windows中的任务管理器&#13;
+&lt;img src = 'https://img2020.cnblogs.com/blog/2034475/202006/2034475-20200617095227240-992544115.png'&gt;&#13;
+&#13;
+　　可以看到，输出结果分两部分，前5行是总览，下面是具体的进程资源占用情况。</description><guid isPermaLink="true">https://xiykj.github.io/post/Linux-ming-ling-Top-xiang-jie.html</guid><pubDate>Mon, 19 Aug 2024 03:08:19 +0000</pubDate></item><item><title>树梅派安全关机#重启命令</title><link>https://xiykj.github.io/post/shu-mei-pai-an-quan-guan-ji-%23-zhong-qi-ming-ling.html</link><description>## 安全关机：&#13;
 ```&#13;
 sudo shutdown -h now&#13;
 sudo halt&#13;
