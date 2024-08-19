@@ -4,10 +4,10 @@
 ```
 sudo apt-get update                #更新软件源列表
 sudo aptitude install gmchess            #安装GMChess中国象棋包，这里不用apt-get是因为依赖包的问题
-gmchess            #开启中国象棋
+gmchess            #启动中国象棋
 ```
-### 界面：
+### 程序界面：
 <img src = 'https://img2020.cnblogs.com/blog/2034475/202006/2034475-20200623104229627-739933384.png'>
 　　
 
-　　在开始菜单/游戏 也可以找到名为“天书棋谈”
+### 在开始菜单/游戏 也可以找到名为“天书棋谈”的程序

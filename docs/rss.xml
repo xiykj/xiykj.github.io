@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>凡是過往；皆為序章</title><link>https://xiykj.github.io</link><description>不积跬步无以至千里；不积小流无以成江海。</description><copyright>凡是過往；皆為序章</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/164145440?s=48&amp;v=4</url><title>avatar</title><link>https://xiykj.github.io</link></image><lastBuildDate>Mon, 19 Aug 2024 03:36:45 +0000</lastBuildDate><managingEditor>凡是過往；皆為序章</managingEditor><ttl>60</ttl><webMaster>凡是過往；皆為序章</webMaster><item><title>Windows 远程桌面服务开启</title><link>https://xiykj.github.io/post/Windows%20-yuan-cheng-zhuo-mian-fu-wu-kai-qi.html</link><description>　　今天，同事说她的电脑远程桌面服务开了，但是电脑还是无法远程桌面连接（系统是windows 7 Professional X64）&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>凡是過往；皆為序章</title><link>https://xiykj.github.io</link><description>不积跬步无以至千里；不积小流无以成江海。</description><copyright>凡是過往；皆為序章</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/164145440?s=48&amp;v=4</url><title>avatar</title><link>https://xiykj.github.io</link></image><lastBuildDate>Mon, 19 Aug 2024 03:37:47 +0000</lastBuildDate><managingEditor>凡是過往；皆為序章</managingEditor><ttl>60</ttl><webMaster>凡是過往；皆為序章</webMaster><item><title>Windows 远程桌面服务开启</title><link>https://xiykj.github.io/post/Windows%20-yuan-cheng-zhuo-mian-fu-wu-kai-qi.html</link><description>　　今天，同事说她的电脑远程桌面服务开了，但是电脑还是无法远程桌面连接（系统是windows 7 Professional X64）&#13;
 &lt;img src = 'https://img2020.cnblogs.com/blog/2034475/202012/2034475-20201208112655040-1781087037.png'&gt;&#13;
 　　&#13;
 ## 解决方法&#13;
@@ -44,13 +44,13 @@
 ```&#13;
 sudo apt-get update                #更新软件源列表&#13;
 sudo aptitude install gmchess            #安装GMChess中国象棋包，这里不用apt-get是因为依赖包的问题&#13;
-gmchess            #开启中国象棋&#13;
+gmchess            #启动中国象棋&#13;
 ```&#13;
-### 界面：&#13;
+### 程序界面：&#13;
 &lt;img src = 'https://img2020.cnblogs.com/blog/2034475/202006/2034475-20200623104229627-739933384.png'&gt;&#13;
 　　&#13;
 &#13;
-　　在开始菜单/游戏 也可以找到名为“天书棋谈”。</description><guid isPermaLink="true">https://xiykj.github.io/post/shu-mei-pai-an-zhuang-GMChess-zhong-guo-xiang-qi.html</guid><pubDate>Mon, 19 Aug 2024 03:30:44 +0000</pubDate></item><item><title>系统每次进入桌面报错“由于启动计算机时出现了页面文件配置问题”</title><link>https://xiykj.github.io/post/xi-tong-mei-ci-jin-ru-zhuo-mian-bao-cuo-%E2%80%9C-you-yu-qi-dong-ji-suan-ji-shi-chu-xian-le-ye-mian-wen-jian-pei-zhi-wen-ti-%E2%80%9D.html</link><description>　　Win7每次开机进入系统后都会报一个提示：由于启动计算机时出现了页面文件配置问题，Windows在您的计算机上创建了一个临时页面文件，所有磁盘驱动器的总页面文件大小可能稍大于您所指定的大小&#13;
+### 在开始菜单/游戏 也可以找到名为“天书棋谈”的程序。</description><guid isPermaLink="true">https://xiykj.github.io/post/shu-mei-pai-an-zhuang-GMChess-zhong-guo-xiang-qi.html</guid><pubDate>Mon, 19 Aug 2024 03:30:44 +0000</pubDate></item><item><title>系统每次进入桌面报错“由于启动计算机时出现了页面文件配置问题”</title><link>https://xiykj.github.io/post/xi-tong-mei-ci-jin-ru-zhuo-mian-bao-cuo-%E2%80%9C-you-yu-qi-dong-ji-suan-ji-shi-chu-xian-le-ye-mian-wen-jian-pei-zhi-wen-ti-%E2%80%9D.html</link><description>　　Win7每次开机进入系统后都会报一个提示：由于启动计算机时出现了页面文件配置问题，Windows在您的计算机上创建了一个临时页面文件，所有磁盘驱动器的总页面文件大小可能稍大于您所指定的大小&#13;
 &lt;img src = 'https://img2020.cnblogs.com/blog/2034475/202012/2034475-20201208111733934-467352827.png'&gt;&#13;
 　　&#13;
 &#13;
