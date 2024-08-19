@@ -10,181 +10,181 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="- > 查看内存使用情况
+<meta name="description" content="### 查看内存使用情况
 
 free -m            查看内存使用情况
 free -m -s 10            内存情况每隔10秒刷新一次
 <br/>
 
-- > 终止命令并退出
+### 终止命令并退出
 
 ctrl+C             终止命令
 <br/>
 
-- > 查看进程内存占用情况
+### 查看进程内存占用情况
 
 top            查看进程内存情况
 <br/>
 
-- > 查看Linux版本
+### 查看Linux版本
 
 uname -a            查看linux内核版本
 <br/>
 
-- > 查看cpu配置
+### 查看cpu配置
 
 cat /proc/cpuinfo            查看cpu信息
 lscpu　　        查看cpu信息
 <br/>
 
-- > 查看树梅派型号
+### 查看树梅派型号
 
 cat /proc/device-tree/model            查看树梅派版本信息
 <br/>
 
-- > 查看cpu温度
+### 查看cpu温度
 
 vcgencmd measure_temp            查看cpu温度
 <br/>
 
-- > 查看cpu时钟频率
+### 查看cpu时钟频率
 
 vcgencmd get_config arm_freq            查看cpu时钟频率
 <br/>
 
-- > 查看GPIO
+### 查看GPIO
 
 gpio readall            查看GPIO定义
 pinout                查看GPIO定义
 <br/>
 
-- > 查看磁盘使用情况
+### 查看磁盘使用情况
 
 sudo df -h            查看磁盘使用情况
 <br/>
 
-- > 调节音量大小
+### 调节音量大小
 
 alsamixer            树梅派图形化调节音量大小
 <br/>
 
-- > 树梅派设置
+### 树梅派设置
 
 sudo raspi-config            树梅派设置中心
 <br/>
 
-- > 终端清屏命令
+### 终端清屏命令
 
 clear            命令终端清屏
 ctrl+L            命令终端清屏
 <br/>
 
-- > 查找命令
+### 查找命令
 
-find -name '*郑源*'            查找文件名中间有“郑源”两字
-find -name '郑*'            查找以“郑”字开头的所有文件
-find -name '*.flac'            查找所有“flac”格式的文件
-find -iname 't*'　　        查找所有以t开头的文件，加iname不区分t的大小写
+find ./ -name '*郑源*'            在当前目录下查找文件名中间有“郑源”两字
+find ./ -name '郑*'            查找以“郑”字开头的所有文件
+find / -name '*.flac'            全盘查找所有“flac”格式的文件
+find / -iname 't*'　　        全盘查找所有以t开头的文件，加iname不区分t的大小写
 <br/>
 
-- > 安装#搜索软件
+### 安装#搜索软件
 
 sudo apt-get update            更新软件源列表
 sudo apt-get install XXX            安装软件，XXX指具体软件包名
 sudo apt-cache search XXX            搜索软件包名，XXX为软件包名
 <br/>
 
-- > 查看历史使用过的命令
+### 查看历史使用过的命令
 
 history            查看历史使用过的命令
 <!-- ##{'script':'<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script>'}## -->
 。">
 <meta property="og:title" content="Linux命令实用记录#树梅派">
-<meta property="og:description" content="- > 查看内存使用情况
+<meta property="og:description" content="### 查看内存使用情况
 
 free -m            查看内存使用情况
 free -m -s 10            内存情况每隔10秒刷新一次
 <br/>
 
-- > 终止命令并退出
+### 终止命令并退出
 
 ctrl+C             终止命令
 <br/>
 
-- > 查看进程内存占用情况
+### 查看进程内存占用情况
 
 top            查看进程内存情况
 <br/>
 
-- > 查看Linux版本
+### 查看Linux版本
 
 uname -a            查看linux内核版本
 <br/>
 
-- > 查看cpu配置
+### 查看cpu配置
 
 cat /proc/cpuinfo            查看cpu信息
 lscpu　　        查看cpu信息
 <br/>
 
-- > 查看树梅派型号
+### 查看树梅派型号
 
 cat /proc/device-tree/model            查看树梅派版本信息
 <br/>
 
-- > 查看cpu温度
+### 查看cpu温度
 
 vcgencmd measure_temp            查看cpu温度
 <br/>
 
-- > 查看cpu时钟频率
+### 查看cpu时钟频率
 
 vcgencmd get_config arm_freq            查看cpu时钟频率
 <br/>
 
-- > 查看GPIO
+### 查看GPIO
 
 gpio readall            查看GPIO定义
 pinout                查看GPIO定义
 <br/>
 
-- > 查看磁盘使用情况
+### 查看磁盘使用情况
 
 sudo df -h            查看磁盘使用情况
 <br/>
 
-- > 调节音量大小
+### 调节音量大小
 
 alsamixer            树梅派图形化调节音量大小
 <br/>
 
-- > 树梅派设置
+### 树梅派设置
 
 sudo raspi-config            树梅派设置中心
 <br/>
 
-- > 终端清屏命令
+### 终端清屏命令
 
 clear            命令终端清屏
 ctrl+L            命令终端清屏
 <br/>
 
-- > 查找命令
+### 查找命令
 
-find -name '*郑源*'            查找文件名中间有“郑源”两字
-find -name '郑*'            查找以“郑”字开头的所有文件
-find -name '*.flac'            查找所有“flac”格式的文件
-find -iname 't*'　　        查找所有以t开头的文件，加iname不区分t的大小写
+find ./ -name '*郑源*'            在当前目录下查找文件名中间有“郑源”两字
+find ./ -name '郑*'            查找以“郑”字开头的所有文件
+find / -name '*.flac'            全盘查找所有“flac”格式的文件
+find / -iname 't*'　　        全盘查找所有以t开头的文件，加iname不区分t的大小写
 <br/>
 
-- > 安装#搜索软件
+### 安装#搜索软件
 
 sudo apt-get update            更新软件源列表
 sudo apt-get install XXX            安装软件，XXX指具体软件包名
 sudo apt-cache search XXX            搜索软件包名，XXX为软件包名
 <br/>
 
-- > 查看历史使用过的命令
+### 查看历史使用过的命令
 
 history            查看历史使用过的命令
 <!-- ##{'script':'<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script>'}## -->
@@ -249,157 +249,61 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><ul>
-<li>
-<blockquote>
-<p>查看内存使用情况</p>
-</blockquote>
-</li>
-</ul>
+<div class="markdown-body" id="postBody"><h3>查看内存使用情况</h3>
 <p>free -m            查看内存使用情况<br>
 free -m -s 10            内存情况每隔10秒刷新一次<br>
 <br></p>
-<ul>
-<li>
-<blockquote>
-<p>终止命令并退出</p>
-</blockquote>
-</li>
-</ul>
+<h3>终止命令并退出</h3>
 <p>ctrl+C             终止命令<br>
 <br></p>
-<ul>
-<li>
-<blockquote>
-<p>查看进程内存占用情况</p>
-</blockquote>
-</li>
-</ul>
+<h3>查看进程内存占用情况</h3>
 <p>top            查看进程内存情况<br>
 <br></p>
-<ul>
-<li>
-<blockquote>
-<p>查看Linux版本</p>
-</blockquote>
-</li>
-</ul>
+<h3>查看Linux版本</h3>
 <p>uname -a            查看linux内核版本<br>
 <br></p>
-<ul>
-<li>
-<blockquote>
-<p>查看cpu配置</p>
-</blockquote>
-</li>
-</ul>
+<h3>查看cpu配置</h3>
 <p>cat /proc/cpuinfo            查看cpu信息<br>
 lscpu　　        查看cpu信息<br>
 <br></p>
-<ul>
-<li>
-<blockquote>
-<p>查看树梅派型号</p>
-</blockquote>
-</li>
-</ul>
+<h3>查看树梅派型号</h3>
 <p>cat /proc/device-tree/model            查看树梅派版本信息<br>
 <br></p>
-<ul>
-<li>
-<blockquote>
-<p>查看cpu温度</p>
-</blockquote>
-</li>
-</ul>
+<h3>查看cpu温度</h3>
 <p>vcgencmd measure_temp            查看cpu温度<br>
 <br></p>
-<ul>
-<li>
-<blockquote>
-<p>查看cpu时钟频率</p>
-</blockquote>
-</li>
-</ul>
+<h3>查看cpu时钟频率</h3>
 <p>vcgencmd get_config arm_freq            查看cpu时钟频率<br>
 <br></p>
-<ul>
-<li>
-<blockquote>
-<p>查看GPIO</p>
-</blockquote>
-</li>
-</ul>
+<h3>查看GPIO</h3>
 <p>gpio readall            查看GPIO定义<br>
 pinout                查看GPIO定义<br>
 <br></p>
-<ul>
-<li>
-<blockquote>
-<p>查看磁盘使用情况</p>
-</blockquote>
-</li>
-</ul>
+<h3>查看磁盘使用情况</h3>
 <p>sudo df -h            查看磁盘使用情况<br>
 <br></p>
-<ul>
-<li>
-<blockquote>
-<p>调节音量大小</p>
-</blockquote>
-</li>
-</ul>
+<h3>调节音量大小</h3>
 <p>alsamixer            树梅派图形化调节音量大小<br>
 <br></p>
-<ul>
-<li>
-<blockquote>
-<p>树梅派设置</p>
-</blockquote>
-</li>
-</ul>
+<h3>树梅派设置</h3>
 <p>sudo raspi-config            树梅派设置中心<br>
 <br></p>
-<ul>
-<li>
-<blockquote>
-<p>终端清屏命令</p>
-</blockquote>
-</li>
-</ul>
+<h3>终端清屏命令</h3>
 <p>clear            命令终端清屏<br>
 ctrl+L            命令终端清屏<br>
 <br></p>
-<ul>
-<li>
-<blockquote>
-<p>查找命令</p>
-</blockquote>
-</li>
-</ul>
-<p>find -name '<em>郑源</em>'            查找文件名中间有“郑源”两字<br>
-find -name '郑*'            查找以“郑”字开头的所有文件<br>
-find -name '<em>.flac'            查找所有“flac”格式的文件<br>
-find -iname 't</em>'　　        查找所有以t开头的文件，加iname不区分t的大小写<br>
+<h3>查找命令</h3>
+<p>find ./ -name '<em>郑源</em>'            在当前目录下查找文件名中间有“郑源”两字<br>
+find ./ -name '郑*'            查找以“郑”字开头的所有文件<br>
+find / -name '<em>.flac'            全盘查找所有“flac”格式的文件<br>
+find / -iname 't</em>'　　        全盘查找所有以t开头的文件，加iname不区分t的大小写<br>
 <br></p>
-<ul>
-<li>
-<blockquote>
-<p>安装#搜索软件</p>
-</blockquote>
-</li>
-</ul>
+<h3>安装#搜索软件</h3>
 <p>sudo apt-get update            更新软件源列表<br>
 sudo apt-get install XXX            安装软件，XXX指具体软件包名<br>
 sudo apt-cache search XXX            搜索软件包名，XXX为软件包名<br>
 <br></p>
-<ul>
-<li>
-<blockquote>
-<p>查看历史使用过的命令</p>
-</blockquote>
-</li>
-</ul>
+<h3>查看历史使用过的命令</h3>
 <p>history            查看历史使用过的命令</p>
 </div>
 <div style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</div>
