@@ -1,5 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>凡是過往；皆為序章</title><link>https://xiykj.github.io</link><description>不积跬步无以至千里；不积小流无以成江海。</description><copyright>凡是過往；皆為序章</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/164145440?s=48&amp;v=4</url><title>avatar</title><link>https://xiykj.github.io</link></image><lastBuildDate>Wed, 21 Aug 2024 03:52:53 +0000</lastBuildDate><managingEditor>凡是過往；皆為序章</managingEditor><ttl>60</ttl><webMaster>凡是過往；皆為序章</webMaster><item><title>网线水晶头的接法</title><link>https://xiykj.github.io/post/wang-xian-shui-jing-tou-de-jie-fa.html</link><description>- 网线水晶头的接法分为两种：直连互联法、交叉互联法。</description><guid isPermaLink="true">https://xiykj.github.io/post/wang-xian-shui-jing-tou-de-jie-fa.html</guid><pubDate>Wed, 21 Aug 2024 03:45:02 +0000</pubDate></item><item><title>树梅派编译运行C语言代码</title><link>https://xiykj.github.io/post/shu-mei-pai-bian-yi-yun-xing-C-yu-yan-dai-ma.html</link><description>　　因为树梅派自带gcc套件，gcc是支持C语言，下面就教大家在树梅派上编写C语言程序&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>凡是過往；皆為序章</title><link>https://xiykj.github.io</link><description>不积跬步无以至千里；不积小流无以成江海。</description><copyright>凡是過往；皆為序章</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/164145440?s=48&amp;v=4</url><title>avatar</title><link>https://xiykj.github.io</link></image><lastBuildDate>Wed, 21 Aug 2024 04:09:01 +0000</lastBuildDate><managingEditor>凡是過往；皆為序章</managingEditor><ttl>60</ttl><webMaster>凡是過往；皆為序章</webMaster><item><title>Dos命令复制所有目录下同类型文件</title><link>https://xiykj.github.io/post/Dos-ming-ling-fu-zhi-suo-you-mu-lu-xia-tong-lei-xing-wen-jian.html</link><description>　　在Windows 中如果一个目录下有好多个目录，但是我只想复制出来所有目录下相同类型的文件，不要告诉我你要一个个目录下去手动复制，那简直是要崩溃了，现在教大家一个Dos命令就可以复制出来所有你想要的文件，具体用For循环来实现功能，在cmd终端中输入以下代码：&#13;
+```P4&#13;
+for /r %i in (*.docx) do copy '%i' /y d:\test&#13;
+```&#13;
+　&#13;
+　　这是我在电脑上测试的这段代码，所有的word文件都复制到 d:\test 目录下，具体实现的话可以自己操作下，*.docx可以根据自己的需求进行更改（docx是word文件，xlsx是excel文件，pptx是ppt文件，jpg是图片文件，rar是压缩文件，dwg是cad文件，具体文件格式示软件要求）&#13;
+&lt;img src = 'https://img2020.cnblogs.com/blog/2034475/202012/2034475-20201209113622989-543018163.png'&gt;&#13;
+　　&#13;
+&#13;
+　　如果要写成批处理文件的话，变量 %i要写成 %%i&#13;
+。</description><guid isPermaLink="true">https://xiykj.github.io/post/Dos-ming-ling-fu-zhi-suo-you-mu-lu-xia-tong-lei-xing-wen-jian.html</guid><pubDate>Wed, 21 Aug 2024 04:08:38 +0000</pubDate></item><item><title>网线水晶头的接法</title><link>https://xiykj.github.io/post/wang-xian-shui-jing-tou-de-jie-fa.html</link><description>- 网线水晶头的接法分为两种：直连互联法、交叉互联法。</description><guid isPermaLink="true">https://xiykj.github.io/post/wang-xian-shui-jing-tou-de-jie-fa.html</guid><pubDate>Wed, 21 Aug 2024 03:45:02 +0000</pubDate></item><item><title>树梅派编译运行C语言代码</title><link>https://xiykj.github.io/post/shu-mei-pai-bian-yi-yun-xing-C-yu-yan-dai-ma.html</link><description>　　因为树梅派自带gcc套件，gcc是支持C语言，下面就教大家在树梅派上编写C语言程序&#13;
 &#13;
 　　1.首先用vim编辑代码，编写一个简单的C语言程序如下，并将文件名改为test.c，如下图所示：&#13;
 ```P4&#13;
