@@ -1,5 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>凡是過往；皆為序章</title><link>https://xiykj.github.io</link><description>不积跬步无以至千里；不积小流无以成江海。</description><copyright>凡是過往；皆為序章</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/164145440?s=48&amp;v=4</url><title>avatar</title><link>https://xiykj.github.io</link></image><lastBuildDate>Wed, 21 Aug 2024 03:17:21 +0000</lastBuildDate><managingEditor>凡是過往；皆為序章</managingEditor><ttl>60</ttl><webMaster>凡是過往；皆為序章</webMaster><item><title>固态M.2接口定义</title><link>https://xiykj.github.io/post/gu-tai-M.2-jie-kou-ding-yi.html</link><description>　　我们都知道SSD拥有比HDD更快的读写速度，但SATA总线标准却拖累了SSD性能的发挥。</description><guid isPermaLink="true">https://xiykj.github.io/post/gu-tai-M.2-jie-kou-ding-yi.html</guid><pubDate>Wed, 21 Aug 2024 03:16:57 +0000</pubDate></item><item><title>回首Windows的35年发展史;你觉得哪个版本最经典</title><link>https://xiykj.github.io/post/hui-shou-Windows-de-35-nian-fa-zhan-shi-%3B-ni-jue-de-na-ge-ban-ben-zui-jing-dian.html</link><description>回首微软的35年发展史，Windows历经从DOS进化至Win NT时代，在这历程中哪个版本是令你最难忘怀的呢！&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>凡是過往；皆為序章</title><link>https://xiykj.github.io</link><description>不积跬步无以至千里；不积小流无以成江海。</description><copyright>凡是過往；皆為序章</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/164145440?s=48&amp;v=4</url><title>avatar</title><link>https://xiykj.github.io</link></image><lastBuildDate>Wed, 21 Aug 2024 03:19:31 +0000</lastBuildDate><managingEditor>凡是過往；皆為序章</managingEditor><ttl>60</ttl><webMaster>凡是過往；皆為序章</webMaster><item><title>查看电脑最大支持内存的几种方式</title><link>https://xiykj.github.io/post/cha-kan-dian-nao-zui-da-zhi-chi-nei-cun-de-ji-zhong-fang-shi.html</link><description>## windows 命令查询&#13;
+&#13;
+　　在cmd命令终端中输入命令： wmic memphysical get maxcapacity&#13;
+&lt;img src = 'https://img2020.cnblogs.com/blog/2034475/202012/2034475-20201208142250675-116978706.png'&gt;&#13;
+　　&#13;
+　　如上图所示，16777216 就是这台电脑最大支持的内存容量（单位Kb），将 16777216/1024/1024=16GB ，16GB就是这台电脑支持的最大内存容量&#13;
+&lt;br/&gt;&#13;
+ &#13;
+&#13;
+## Aida64软件查看法&#13;
+&#13;
+　　这里还有一个办法就是通过第三方软件查询电脑支持最大内存，打开AIDA64工具，依次点击 “计算机-----DMI-----内存阵列-----系统内存”，下方就能看到最大支持内存了，这台电脑最大支持内存为16GB，内存插槽2个，通过这个工具还能查询到电脑硬件的其它信息，等着慢慢研究下……哈哈 ^~^&#13;
+&lt;img src = 'https://img2020.cnblogs.com/blog/2034475/202007/2034475-20200701081323703-599417151.png'&gt;。</description><guid isPermaLink="true">https://xiykj.github.io/post/cha-kan-dian-nao-zui-da-zhi-chi-nei-cun-de-ji-zhong-fang-shi.html</guid><pubDate>Wed, 21 Aug 2024 03:19:02 +0000</pubDate></item><item><title>固态M.2接口定义</title><link>https://xiykj.github.io/post/gu-tai-M.2-jie-kou-ding-yi.html</link><description>　　我们都知道SSD拥有比HDD更快的读写速度，但SATA总线标准却拖累了SSD性能的发挥。</description><guid isPermaLink="true">https://xiykj.github.io/post/gu-tai-M.2-jie-kou-ding-yi.html</guid><pubDate>Wed, 21 Aug 2024 03:16:57 +0000</pubDate></item><item><title>回首Windows的35年发展史;你觉得哪个版本最经典</title><link>https://xiykj.github.io/post/hui-shou-Windows-de-35-nian-fa-zhan-shi-%3B-ni-jue-de-na-ge-ban-ben-zui-jing-dian.html</link><description>回首微软的35年发展史，Windows历经从DOS进化至Win NT时代，在这历程中哪个版本是令你最难忘怀的呢！&#13;
 &lt;img src = 'https://img2020.cnblogs.com/blog/2034475/202006/2034475-20200627162817503-1252128494.png'&gt;&#13;
 　　　　&#13;
 &#13;
