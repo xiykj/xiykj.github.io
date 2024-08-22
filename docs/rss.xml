@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>凡是過往；皆為序章</title><link>https://xiykj.github.io</link><description>不积跬步无以至千里；不积小流无以成江海。</description><copyright>凡是過往；皆為序章</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/164145440?s=48&amp;v=4</url><title>avatar</title><link>https://xiykj.github.io</link></image><lastBuildDate>Thu, 22 Aug 2024 08:45:30 +0000</lastBuildDate><managingEditor>凡是過往；皆為序章</managingEditor><ttl>60</ttl><webMaster>凡是過往；皆為序章</webMaster><item><title>电脑开机报错代码0Xc000000f</title><link>https://xiykj.github.io/post/dian-nao-kai-ji-bao-cuo-dai-ma-0Xc000000f.html</link><description>### 早上到单位时，电脑无法进入系统了，开机错误代码0Xc000000f，如下图所示&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>凡是過往；皆為序章</title><link>https://xiykj.github.io</link><description>不积跬步无以至千里；不积小流无以成江海。</description><copyright>凡是過往；皆為序章</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/164145440?s=48&amp;v=4</url><title>avatar</title><link>https://xiykj.github.io</link></image><lastBuildDate>Thu, 22 Aug 2024 08:49:29 +0000</lastBuildDate><managingEditor>凡是過往；皆為序章</managingEditor><ttl>60</ttl><webMaster>凡是過往；皆為序章</webMaster><item><title>电脑开机报错代码0Xc000000f</title><link>https://xiykj.github.io/post/dian-nao-kai-ji-bao-cuo-dai-ma-0Xc000000f.html</link><description>### 早上到单位时，电脑无法进入系统了，开机错误代码0Xc000000f，如下图所示&#13;
 &lt;img src = 'https://s3.bmp.ovh/imgs/2024/08/22/f2b3c7ed7b3414cd.png' /&gt;&#13;
 &#13;
 &#13;
@@ -28,13 +28,12 @@
 ### 6. 然后再将系统引导修复下就可以了，选择系统所在盘符，点击自动修复后重启计算机就可进入系统了&#13;
 &lt;img src = 'https://s3.bmp.ovh/imgs/2024/08/22/c0d225fc20822c29.png' /&gt;。</description><guid isPermaLink="true">https://xiykj.github.io/post/dian-nao-kai-ji-bao-cuo-dai-ma-0Xc000000f.html</guid><pubDate>Thu, 22 Aug 2024 08:45:03 +0000</pubDate></item><item><title>Windows蓝屏Dump文件分析</title><link>https://xiykj.github.io/post/Windows-lan-ping-Dump-wen-jian-fen-xi.html</link><description>　　有时候电脑经常性蓝屏，我们常用的解决方法就是重装系统，但是今天我教大家一个简便的方法，通过微软自产工具WinDbg程序来分析蓝屏Dump文件，来解决电脑蓝屏问题&#13;
 &#13;
-- 前言：&#13;
+### 前言：&#13;
 &#13;
 　　　　系统蓝屏后每次都会在 C:\Windows\Minidump 目录下生成一个dmp文件，文件名称是按时间顺序生成的，我们只需要用 WinDbg 工具对dmp文件进行准确分析后就能得出蓝屏的大概原因&#13;
 &#13;
-- WinDbg工具是什么？它到底能做什么呢？&#13;
+### WinDbg工具是什么？它到底能做什么呢？&#13;
 &lt;img src = 'https://img2020.cnblogs.com/blog/2034475/202007/2034475-20200715105019875-1174998945.jpg'&gt;&#13;
-　　&#13;
 &#13;
 　　　　WinDbg是在windows平台下，强大的用户态和内核态调试工具。</description><guid isPermaLink="true">https://xiykj.github.io/post/Windows-lan-ping-Dump-wen-jian-fen-xi.html</guid><pubDate>Thu, 22 Aug 2024 07:10:53 +0000</pubDate></item><item><title>Dos命令复制所有目录下同类型文件</title><link>https://xiykj.github.io/post/Dos-ming-ling-fu-zhi-suo-you-mu-lu-xia-tong-lei-xing-wen-jian.html</link><description>　　在Windows 中如果一个目录下有好多个目录，但是我只想复制出来所有目录下相同类型的文件，不要告诉我你要一个个目录下去手动复制，那简直是要崩溃了，现在教大家一个Dos命令就可以复制出来所有你想要的文件，具体用For循环来实现功能，在cmd终端中输入以下代码：&#13;
 ```P4&#13;
