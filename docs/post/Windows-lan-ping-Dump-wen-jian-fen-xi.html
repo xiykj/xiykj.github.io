@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'></script>
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/164145440?s=48&v=4"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="　　有时候电脑经常性蓝屏，我们常用的解决方法就是重装系统，但是今天我教大家一个简便的方法，通过微软自产工具WinDbg程序来分析蓝屏Dump文件，来解决电脑蓝屏问题
+
+- 前言：
+
+　　　　系统蓝屏后每次都会在 C:\Windows\Minidump 目录下生成一个dmp文件，文件名称是按时间顺序生成的，我们只需要用 WinDbg 工具对dmp文件进行准确分析后就能得出蓝屏的大概原因
+
+- WinDbg工具是什么？它到底能做什么呢？
+<img src = 'https://img2020.cnblogs.com/blog/2034475/202007/2034475-20200715105019875-1174998945.jpg'>
+　　
+
+　　　　WinDbg是在windows平台下，强大的用户态和内核态调试工具。">
+<meta property="og:title" content="Windows蓝屏Dump文件分析">
+<meta property="og:description" content="　　有时候电脑经常性蓝屏，我们常用的解决方法就是重装系统，但是今天我教大家一个简便的方法，通过微软自产工具WinDbg程序来分析蓝屏Dump文件，来解决电脑蓝屏问题
+
+- 前言：
+
+　　　　系统蓝屏后每次都会在 C:\Windows\Minidump 目录下生成一个dmp文件，文件名称是按时间顺序生成的，我们只需要用 WinDbg 工具对dmp文件进行准确分析后就能得出蓝屏的大概原因
+
+- WinDbg工具是什么？它到底能做什么呢？
+<img src = 'https://img2020.cnblogs.com/blog/2034475/202007/2034475-20200715105019875-1174998945.jpg'>
+　　
+
+　　　　WinDbg是在windows平台下，强大的用户态和内核态调试工具。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://xiykj.github.io/post/Windows-lan-ping-Dump-wen-jian-fen-xi.html">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/164145440?s=48&v=4">
+<title>Windows蓝屏Dump文件分析</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">Windows蓝屏Dump文件分析</h1>
+<div class="title-right">
+    <a href="https://xiykj.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/xiykj/xiykj.github.io/issues/46" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><p>　　有时候电脑经常性蓝屏，我们常用的解决方法就是重装系统，但是今天我教大家一个简便的方法，通过微软自产工具WinDbg程序来分析蓝屏Dump文件，来解决电脑蓝屏问题</p>
+<ul>
+<li>前言：</li>
+</ul>
+<p>　　　　系统蓝屏后每次都会在 C:\Windows\Minidump 目录下生成一个dmp文件，文件名称是按时间顺序生成的，我们只需要用 WinDbg 工具对dmp文件进行准确分析后就能得出蓝屏的大概原因</p>
+<ul>
+<li>WinDbg工具是什么？它到底能做什么呢？</li>
+</ul>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/d4f7a86140e85b797a8670003c42270c8e1d850ce67587b0156a7dddb6f0841d/68747470733a2f2f696d67323032302e636e626c6f67732e636f6d2f626c6f672f323033343437352f3230323030372f323033343437352d32303230303731353130353031393837352d313137343939383934352e6a7067"><img src="https://camo.githubusercontent.com/d4f7a86140e85b797a8670003c42270c8e1d850ce67587b0156a7dddb6f0841d/68747470733a2f2f696d67323032302e636e626c6f67732e636f6d2f626c6f672f323033343437352f3230323030372f323033343437352d32303230303731353130353031393837352d313137343939383934352e6a7067" data-canonical-src="https://img2020.cnblogs.com/blog/2034475/202007/2034475-20200715105019875-1174998945.jpg" style="max-width: 100%;"></a></p>
+　　
+<p>　　　　WinDbg是在windows平台下，强大的用户态和内核态调试工具。它能够通过dmp文件轻松的定位到问题根源，可用于分析蓝屏、程序崩溃（IE崩溃）原因，是我们日常工作中必不可少的一个有力工具，学会使用它，将有效提升我们的问题解决效率和准确率</p>
+<ul>
+<li>WinDbg6.12.0002.633版本程序下载地址：</li>
+</ul>
+<p>　　　　蓝屏Dump分析工具WinDbg(x64).rar　　链接:<a href="https://pan.baidu.com/s/1TgY7CKKZ487mFN7y_8QnRg" rel="nofollow">https://pan.baidu.com/s/1TgY7CKKZ487mFN7y_8QnRg</a> 提取码:6t65 复制这段内容后打开百度网盘手机App，操作更方便哦</p>
+<ul>
+<li>设置WinDbg程序符号表</li>
+</ul>
+<p>　　　　符号表是WinDbg关键的“数据库”，如果没有它，WinDbg基本上就是个废物，无法分析出更多问题原因。所以使用WinDbg设置符号表，是必须要走的一步<br>
+　　　　1、运行WinDbg软件，然后按【Ctrl+S】弹出符号表设置窗<br>
+　　　　2、将符号表地址：SRV<em>C:\Symbols</em><a href="http://msdl.microsoft.com/download/symbols" rel="nofollow">http://msdl.microsoft.com/download/symbols</a>  粘贴在输入框中，点击确定即可<br>
+　　　　　　注：红色字体为符号表本地存储路径，建议固定路径，可避免符号表重复下载<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/2c202f3740582c64510f372ea8ef66fb18009ddbb5a6bc8aa16f4bf63569e6ca/68747470733a2f2f696d67323032302e636e626c6f67732e636f6d2f626c6f672f323033343437352f3230323030372f323033343437352d32303230303731353130353034323132392d313532363136323636332e6a7067"><img src="https://camo.githubusercontent.com/2c202f3740582c64510f372ea8ef66fb18009ddbb5a6bc8aa16f4bf63569e6ca/68747470733a2f2f696d67323032302e636e626c6f67732e636f6d2f626c6f672f323033343437352f3230323030372f323033343437352d32303230303731353130353034323132392d313532363136323636332e6a7067" data-canonical-src="https://img2020.cnblogs.com/blog/2034475/202007/2034475-20200715105042129-1526162663.jpg" style="max-width: 100%;"></a></p>
+<p>　　打开第一个Dump文件<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/4b07e3a4f6b9536c09f7a65dafdc4317390faeb4892a57a57224fdfa03e422fa/68747470733a2f2f696d67323032302e636e626c6f67732e636f6d2f626c6f672f323033343437352f3230323030372f323033343437352d32303230303731353130353335383639362d3430393433313238372e6a7067"><img src="https://camo.githubusercontent.com/4b07e3a4f6b9536c09f7a65dafdc4317390faeb4892a57a57224fdfa03e422fa/68747470733a2f2f696d67323032302e636e626c6f67732e636f6d2f626c6f672f323033343437352f3230323030372f323033343437352d32303230303731353130353335383639362d3430393433313238372e6a7067" data-canonical-src="https://img2020.cnblogs.com/blog/2034475/202007/2034475-20200715105358696-409431287.jpg" style="max-width: 100%;"></a><br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/71bf6c2fc2f578f5b2c520a6a692de85e08f649c9e6251de74b74c98ae1e57ee/68747470733a2f2f696d67323032302e636e626c6f67732e636f6d2f626c6f672f323033343437352f3230323030372f323033343437352d32303230303731353130353531343532332d313030303033323135332e6a7067"><img src="https://camo.githubusercontent.com/71bf6c2fc2f578f5b2c520a6a692de85e08f649c9e6251de74b74c98ae1e57ee/68747470733a2f2f696d67323032302e636e626c6f67732e636f6d2f626c6f672f323033343437352f3230323030372f323033343437352d32303230303731353130353531343532332d313030303033323135332e6a7067" data-canonical-src="https://img2020.cnblogs.com/blog/2034475/202007/2034475-20200715105514523-1000032153.jpg" style="max-width: 100%;"></a></p>
+<p>　　　当你拿到一个dmp文件后，可使用【Ctrl+D】快捷键来打开一个dmp文件，或者点击WinDbg界面上的【File=&gt;Open Crash Dump...】按钮，来打开一个dmp文件。第一次打开dmp文件时，可能会收到如下提示，出现这个提示时，勾选“Don't ask again in this WinDbg session”，然后点否即可<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/abee150128ffb35ae45ea6da410a3b40ead151b75e4b26a6613189c96b7caff9/68747470733a2f2f696d67323032302e636e626c6f67732e636f6d2f626c6f672f323033343437352f3230323030372f323033343437352d32303230303731353130353433333331322d323036333736343633302e6a7067"><img src="https://camo.githubusercontent.com/abee150128ffb35ae45ea6da410a3b40ead151b75e4b26a6613189c96b7caff9/68747470733a2f2f696d67323032302e636e626c6f67732e636f6d2f626c6f672f323033343437352f3230323030372f323033343437352d32303230303731353130353433333331322d323036333736343633302e6a7067" data-canonical-src="https://img2020.cnblogs.com/blog/2034475/202007/2034475-20200715105433312-2063764630.jpg" style="max-width: 100%;"></a><br>
+　　</p>
+<p>　　　当你想打开第二个dmp文件时，可能因为上一个分析记录未清除，导致无法直接分析下一个dmp文件，此时你可以使用快捷键【Shift+F5】来关闭上一个dmp分析记录。</p>
+<p>　　至此，简单的WinDbg使用你已经学会了！</p>
+<ul>
+<li>进入主题；分析什么原因导致蓝屏</li>
+</ul>
+<p>　　　　当你打开一个dmp文件后，可能因为太多信息，让你无所适从，不过没关系，我们只需要关注几个关键信息即可。</p>
+<p>　　　　第一个关键信息：System Uptime（开机时间）：</p>
+<p>　　　　通过观察这个时间你就可以知道问题是在什么时候出现的，例如时间小于1分钟基本可以定位为开机蓝屏，反之大于一分钟则可证明是上机后或玩的过程中出现问题了</p>
+<p>　　　　接下来用一个简单的例子来学习简单的dmp分析，下图中System Uptime: 0 days 1:15:48.778，意思是0天(days)1小时15分48秒778毫秒时出现蓝屏了<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/c1395e3106e3a3140b10c3e5e04a3236169c5381a2021447cd0b7b902c63da99/68747470733a2f2f696d67323032302e636e626c6f67732e636f6d2f626c6f672f323033343437352f3230323030372f323033343437352d32303230303731353130353931313335372d313531363830303634362e6a7067"><img src="https://camo.githubusercontent.com/c1395e3106e3a3140b10c3e5e04a3236169c5381a2021447cd0b7b902c63da99/68747470733a2f2f696d67323032302e636e626c6f67732e636f6d2f626c6f672f323033343437352f3230323030372f323033343437352d32303230303731353130353931313335372d313531363830303634362e6a7067" data-canonical-src="https://img2020.cnblogs.com/blog/2034475/202007/2034475-20200715105911357-1516800646.jpg" style="max-width: 100%;"></a><br>
+　</p>
+<p>　　　　那么是什么导致蓝屏的呢？接下来我们就要注意第二个关键信息了！</p>
+<p>　　　　第二个关键信息：Probaly caused by（造成蓝屏可能的原因）</p>
+<p>　　　　这个信息是相对比较重要的一个信息，如果你运气好的话，通过这个信息基本上可以看到导致蓝屏的驱动或者程序名称了，就像下图一样，初步的分析已经有了结果，Probaly caused by 后面显示的是一个名为atikmdag.sys的驱动文件导致蓝屏，这个文件就是显卡驱动。因此蓝屏则很有可能和显卡有关。</p>
+<p>括号中驱动文件名后面的+号代表的是偏移地址，假如多个dmp文件的驱动文件名一样，且偏移地址也一样，则问题原因极有可能是同一个，这个偏移地址与汇编有关，这里不多做介绍<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/995e9d1f3153ebb4657122493ddb2b11d6e501a7f3236c777dbe395562824725/68747470733a2f2f696d67323032302e636e626c6f67732e636f6d2f626c6f672f323033343437352f3230323030372f323033343437352d32303230303731353131303133383839372d313134373738323238362e6a7067"><img src="https://camo.githubusercontent.com/995e9d1f3153ebb4657122493ddb2b11d6e501a7f3236c777dbe395562824725/68747470733a2f2f696d67323032302e636e626c6f67732e636f6d2f626c6f672f323033343437352f3230323030372f323033343437352d32303230303731353131303133383839372d313134373738323238362e6a7067" data-canonical-src="https://img2020.cnblogs.com/blog/2034475/202007/2034475-20200715110138897-1147782286.jpg" style="max-width: 100%;"></a><br>
+　　</p>
+<p>　　　　其实，对于分析蓝屏dmp并不是每次运气都那么好，假如刚刚打开dmp文件未看到明确的蓝屏原因时，我们就需要借助一个命令来进一步分析dmp，这个命令就是：!analyze -v，这个命令能够自动分析绝大部分蓝屏原因。当初步分析没有结果时，可以使用该命令进一步分析故障原因，当然你也可以直接点击链接样式的!analyze -v来进行执行该命令，为了让大家更直观的看懂里面的信息，大家可以直接看图片中的注释信息<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/82d961e1de17a593599327b2bbf94923d1112c41cd82fad62965cdd78dfa6afa/68747470733a2f2f696d67323032302e636e626c6f67732e636f6d2f626c6f672f323033343437352f3230323030372f323033343437352d32303230303731353131303832333232382d313737323038383234372e6a7067"><img src="https://camo.githubusercontent.com/82d961e1de17a593599327b2bbf94923d1112c41cd82fad62965cdd78dfa6afa/68747470733a2f2f696d67323032302e636e626c6f67732e636f6d2f626c6f672f323033343437352f3230323030372f323033343437352d32303230303731353131303832333232382d313737323038383234372e6a7067" data-canonical-src="https://img2020.cnblogs.com/blog/2034475/202007/2034475-20200715110823228-1772088247.jpg" style="max-width: 100%;"></a><br>
+　<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/8ed5ea041d07f45d2a8bd3f6ddce842e7d5051537479c5387bb0286837bd7fca/68747470733a2f2f696d67323032302e636e626c6f67732e636f6d2f626c6f672f323033343437352f3230323030372f323033343437352d32303230303731353131303835373532302d3232383630393637392e6a7067"><img src="https://camo.githubusercontent.com/8ed5ea041d07f45d2a8bd3f6ddce842e7d5051537479c5387bb0286837bd7fca/68747470733a2f2f696d67323032302e636e626c6f67732e636f6d2f626c6f672f323033343437352f3230323030372f323033343437352d32303230303731353131303835373532302d3232383630393637392e6a7067" data-canonical-src="https://img2020.cnblogs.com/blog/2034475/202007/2034475-20200715110857520-228609679.jpg" style="max-width: 100%;"></a></p>
+<p>　　学到这里，基本上已经可以分析绝大部分dmp文件了，但是分析蓝屏dmp要比较谨慎，对信息需要重新验证一次才更加保险，验证方法很简单，在WinDbg的命令输入框内，输入!process命令，就可以验证触发蓝屏的程序到底是否正确了<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/a3607a236eabe5af6b223531664e6e2f777796079fffefe3c205361e0a814e0b/68747470733a2f2f696d67323032302e636e626c6f67732e636f6d2f626c6f672f323033343437352f3230323030372f323033343437352d32303230303731353131313033343839312d3939313937363639372e6a7067"><img src="https://camo.githubusercontent.com/a3607a236eabe5af6b223531664e6e2f777796079fffefe3c205361e0a814e0b/68747470733a2f2f696d67323032302e636e626c6f67732e636f6d2f626c6f672f323033343437352f3230323030372f323033343437352d32303230303731353131313033343839312d3939313937363639372e6a7067" data-canonical-src="https://img2020.cnblogs.com/blog/2034475/202007/2034475-20200715111034891-991976697.jpg" style="max-width: 100%;"></a><br>
+　　</p>
+<p>　　运行!process命令后得到的信息：<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/86033a1a1a3b94805270ddd6bf7a2146950e81d722b35ebf9a69e703dc310b7a/68747470733a2f2f696d67323032302e636e626c6f67732e636f6d2f626c6f672f323033343437352f3230323030372f323033343437352d32303230303731353131313034353333362d313239383739313237362e6a7067"><img src="https://camo.githubusercontent.com/86033a1a1a3b94805270ddd6bf7a2146950e81d722b35ebf9a69e703dc310b7a/68747470733a2f2f696d67323032302e636e626c6f67732e636f6d2f626c6f672f323033343437352f3230323030372f323033343437352d32303230303731353131313034353333362d313239383739313237362e6a7067" data-canonical-src="https://img2020.cnblogs.com/blog/2034475/202007/2034475-20200715111045336-1298791276.jpg" style="max-width: 100%;"></a><br>
+　　</p>
+<p>　　至此，掌握以上几个简单的分析方法之后，基本上绝大多数dmp大家都可以独立分析了，当然WinDbg是个强大的工具，同时蓝屏的原因也有很多，如果想分析的足够准确，那么就只有多学多练，多去分析，因为WinDbg分析除了懂得几个命令之外，经验更加重要！</p>
+<p>合理再给大家一些分析建议：</p>
+<p>　　并不一定每个dmp文件都可以分析出有用的结论，因此分析dmp并不需要对每个dmp文件的结果过分纠结，其实蓝屏dmp分析也是观察一个规律或者规模的问题定位方法而已。例如你分析了10个dmp，有5个dmp都指向同一个蓝屏原因，另外5个dmp的信息五花八门时，那么你完全可以先处理掉5次蓝屏，同一个原因的问题，因为解决了这个问题之后，后面的问题可能就都解决了！</p></div>
+<div style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://xiykj.github.io">凡是過往；皆為序章</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("05/11/2020"!=""){
+    var startSite=new Date("05/11/2020");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","xiykj/xiykj.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script>
+
+</html>
